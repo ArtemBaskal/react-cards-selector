@@ -10,7 +10,7 @@ class App extends React.Component {
     return (
       <div>
         <SearchBar />
-        <CardsContainer universe={this.props.name}/>
+        <CardsContainer />
         <Universe name="dc" />
         <Universe name="marvel" />
       </div>
