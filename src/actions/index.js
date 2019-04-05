@@ -4,3 +4,10 @@ export const selectUniverse = universe => {
     payload: universe
   };
 };
+
+export const searchHeroes = heroes => {
+  return {
+    type: "HERO_SEARCHED",
+    payload: heroes
+  };
+};

@@ -1,32 +1,52 @@
 import React from "react";
+import { connect } from "react-redux";
+import { searchHeroes } from "../actions";
+import json from "../json/superheroes";
 
 class SearchBar extends React.Component {
-  state = { term: "" };
-
-  
   onInputChange = event => {
-    this.setState({ term: event.target.value });
-  };
 
-  onFormSubmit = event => {
-    event.preventDefault();
-    this.props.onFormSubmit(this.state.term);
+    // if (!this.props.heroes.length || _universe !== this.props.universe) {
+    //   alert("univ changed");
+    // }
+    let filterItems = () =>
+      json[this.props.universe].filter(
+        hero =>
+          hero.name.toLowerCase().indexOf(event.target.value.toLowerCase()) > -1
+      );
+    console.log(filterItems());
+    this.props.searchHeroes(filterItems());
+    // let _universe = this.props.universe;
+    // let _heroes = this.props.heroes;
+    console.log(this.props);
   };
 
   render() {
     return (
       <div className="ui fluid category search">
-      <form onSubmit={this.onFormSubmit} className="ui form">
-        <div className="ui icon input">
-          <input className="prompt" type="text" placeholder="Имя героя" value={this.state.term}
-              onChange={this.onInputChange}/>
-          <i className="search icon"></i>
-        </div>
-        <div className="results"></div>
+        <form onSubmit={e => e.preventDefault()}>
+          <div className="ui icon input">
+            <input
+              className="prompt"
+              type="text"
+              value={this.searchValue}
+              placeholder="Имя героя"
+              onInput={this.onInputChange}
+            />
+            <i className="search icon" />
+          </div>
+          <div className="results" />
         </form>
       </div>
-      
     );
   }
 }
-export default SearchBar;
+
+const mapStateToProps = state => {
+  return { heroes: state.searchedHeroes, universe: state.selectedUniverse };
+};
+
+export default connect(
+  mapStateToProps,
+  { searchHeroes }
+)(SearchBar);

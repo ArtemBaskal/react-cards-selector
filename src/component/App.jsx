@@ -1,21 +1,16 @@
 import React from "react";
-import { connect } from "react-redux"
 import json from "../json/superheroes";
-import CardsContainer from "./CardsContainer";
+import CardContainer from "./CardContainer";
 import SearchBar from "./SearchBar";
 import Universe from "./Universe";
-
+import Test from "./test";
 
 class App extends React.Component {
-
-  onTermSubmit = (term) => {console.log(term)}
-
   render() {
-    console.log(json);
     return (
       <div>
-        <SearchBar onFormSubmit={this.onTermSubmit}/>
-        <CardsContainer />
+        <SearchBar />
+        <CardContainer />
         <Universe name="dc" />
         <Universe name="marvel" />
       </div>
@@ -23,8 +18,4 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return { universe: state.selectedUniverse };
-};
-
-export default connect(mapStateToProps)(App);
+export default App;
