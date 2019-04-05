@@ -11,7 +11,7 @@ class Universe extends React.Component {
           this.props.selectUniverse(this.props.name);
         }}
       >
-        {this.props.name}
+        <img alt={this.props.name}/>
       </div>
     );
   }

@@ -2,23 +2,20 @@ import React from "react";
 import Card from "./Card";
 import { connect } from "react-redux";
 import json from "../json/superheroes";
+import "./CardsContainer.css"
 
 const CardsContainer = ({ universe }) => {
   console.log(universe);
-  // if (universe === "DC") {
-  //   var _universe = "dc";
-  // } else var _universe = "marvel";
 
   const renderedList = json[universe].map(card => {
     return (
-      <div key={card.name}>
-        <label>{card.name}</label>
-        <img src={card.image} />
+      <div className="CardsContainer" key={card.name}>
+        <Card name={card.name} sourse={card.image}/>
       </div>
     );
   });
 
-  return <div>{renderedList}</div>;
+  return <>{renderedList}</>;
 };
 
 const mapStateToProps = state => {
