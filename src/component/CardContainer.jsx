@@ -3,6 +3,7 @@ import Card from "./Card";
 import { connect } from "react-redux";
 import json from "../json/superheroes";
 import "../styles/index.css";
+import _ from "lodash";
 
 const CardContainer = ({ selectedCards, name, heroes, universe }) => {
   let _heroes,
@@ -13,6 +14,9 @@ const CardContainer = ({ selectedCards, name, heroes, universe }) => {
   } else {
     _heroes = heroes;
   }
+
+  // let arr = _.countBy(selectedCards, "name");
+  // console.log(arr[name]);
 
   const renderedList = _heroes.map(card => {
     return (

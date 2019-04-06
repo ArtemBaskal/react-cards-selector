@@ -1,4 +1,5 @@
 import { combineReducers } from "redux";
+import _ from "lodash";
 
 const selectedUniverseReducer = (state = "dc", action) => {
   if (action.type === "UNIVERSE_SELECTED") {
@@ -23,8 +24,14 @@ const searchedNameReducer = (state = "", action) => {
 
 const selectedCardsReducer = (state = [], action) => {
   switch (action.type) {
-    case "CARDS_SELECTED":
+    case "CARDS_SELECTED": {
+      let arr = _.countBy(state, "name");
+      console.log(state);
+      console.log(arr);
+      console.log(action.payload);
+      console.log(arr[action.payload.name]);
       return [...state, action.payload];
+    }
     case "CARDS_REMOVED": {
       console.log(state);
       return state.filter(el => el.name !== action.payload);
