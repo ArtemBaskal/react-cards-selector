@@ -3,20 +3,24 @@ import Card from "./Card";
 import { connect } from "react-redux";
 import { selectCards, removeCard } from "../actions";
 import "../styles/index.css";
+import _ from "lodash";
 
 class SelectedCardContainer extends React.Component {
   render() {
-    console.log(this.props)
+    console.log(this.props);
     if (!this.props.selectedCards.length) {
       return <div className="absence" />;
     } else {
-      const renderedList = this.props.selectedCards.map(card => {
+      const renderedList = this.props.selectedCards.map((card, i) => {
         return (
           <div className="SelectedCardContainer" key={card.name}>
             <i
               onClick={() => {
                 console.log(this.props);
-                this.props.removeCard(this.props);
+                let arr = _.countBy(this.props.selectedCards, "name");
+                console.log(arr);
+                console.log(this.props);
+                this.props.removeCard(this.props.selectedCards[i].name);
               }}
               className="x icon"
             />

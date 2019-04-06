@@ -26,13 +26,13 @@ const selectedCardsReducer = (state = [], action) => {
     case "CARDS_SELECTED":
       return [...state, action.payload];
     case "CARDS_REMOVED": {
-      return state.filter(el => el === "1");
+      console.log(state);
+      return state.filter(el => el.name !== action.payload);
     }
     default:
       return state;
   }
 };
-
 
 export default combineReducers({
   selectedUniverse: selectedUniverseReducer,
