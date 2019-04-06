@@ -1,23 +1,34 @@
 import React from "react";
 import Card from "./Card";
 import { connect } from "react-redux";
+import { selectCards, removeCard } from "../actions";
 import "../styles/index.css";
 
-const SelectedCardContainer = ({ selectedCards }) => {
-  if (!selectedCards.length) {
-    return <div className="absence" />;
-  } else {
-    const renderedList = selectedCards.map(card => {
-      return (
-        <div className="SelectedCardContainer" key={card.name}>
-          <Card name={card.name} image={card.image} />
-        </div>
-      );
-    });
+class SelectedCardContainer extends React.Component {
+  render() {
+    console.log(this.props)
+    if (!this.props.selectedCards.length) {
+      return <div className="absence" />;
+    } else {
+      const renderedList = this.props.selectedCards.map(card => {
+        return (
+          <div className="SelectedCardContainer" key={card.name}>
+            <i
+              onClick={() => {
+                console.log(this.props);
+                this.props.removeCard(this.props);
+              }}
+              className="x icon"
+            />
+            <Card name={card.name} image={card.image} />
+          </div>
+        );
+      });
 
-    return <div>{renderedList}</div>;
+      return <div>{renderedList}</div>;
+    }
   }
-};
+}
 
 const mapStateToProps = state => {
   return {
@@ -25,4 +36,7 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(SelectedCardContainer);
+export default connect(
+  mapStateToProps,
+  { selectCards, removeCard }
+)(SelectedCardContainer);

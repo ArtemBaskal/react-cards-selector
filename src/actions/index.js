@@ -25,3 +25,17 @@ export const selectCards = heroes => {
     payload: heroes
   };
 };
+
+export const removeCard = heroes => {
+  return {
+    type: "CARDS_REMOVED",
+    payload: heroes
+  };
+};
+
+// export const multipleTimesCardSelect = number => {
+//   return {
+//     type: "MULTIPLE_CARD_SELECTION",
+//     payload: number
+//   };
+// };

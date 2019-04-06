@@ -22,11 +22,17 @@ const searchedNameReducer = (state = "", action) => {
 };
 
 const selectedCardsReducer = (state = [], action) => {
-  if (action.type === "CARDS_SELECTED") {
-    return [...state, action.payload];
+  switch (action.type) {
+    case "CARDS_SELECTED":
+      return [...state, action.payload];
+    case "CARDS_REMOVED": {
+      return state.filter(el => el === "1");
+    }
+    default:
+      return state;
   }
-  return state;
 };
+
 
 export default combineReducers({
   selectedUniverse: selectedUniverseReducer,
