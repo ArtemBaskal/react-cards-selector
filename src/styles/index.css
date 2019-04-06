@@ -1,0 +1,35 @@
+.CardContainer {
+  display: inline-block;
+}
+
+.SelectedCardContainer {
+  display: table-cell;
+  overflow-x: scroll;
+}
+
+.Card img {
+  display: flexbox;
+  height: 200px;
+  border-radius: 20px;
+  margin: 8px;
+}
+
+.Card figcaption {
+  display: flexbox;
+}
+
+.HeroName {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.absence {
+  position: relative;
+  height: 259px;
+}
+
+.universe img {
+  height: 150px;
+  display: table-cell;
+}

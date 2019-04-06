@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { findHeroes, searchName } from "../actions";
 import json from "../json/superheroes";
+import "../styles/index.css";
 
 class SearchBar extends React.Component {
   state = { term: "" };
@@ -30,7 +31,7 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div className="ui fluid category search">
+      <div className="ui fluid big category search">
         <form onSubmit={e => e.preventDefault()}>
           <div className="ui icon input">
             <input

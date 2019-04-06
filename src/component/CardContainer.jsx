@@ -2,12 +2,9 @@ import React from "react";
 import Card from "./Card";
 import { connect } from "react-redux";
 import json from "../json/superheroes";
-import "./CardContainer.css";
+import "../styles/index.css";
 
-const Test = ({ name, heroes, universe }) => {
-  // console.log(universe);
-  // console.log(heroes);
-
+const CardContainer = ({ selectedCards, name, heroes, universe }) => {
   let _heroes,
     _universe = universe;
   if (!name.length || _universe !== universe) {
@@ -17,25 +14,24 @@ const Test = ({ name, heroes, universe }) => {
     _heroes = heroes;
   }
 
-  // if (name.length >= 0){_heroes = json[universe]}
-
   const renderedList = _heroes.map(card => {
     return (
       <div className="CardContainer" key={card.name}>
-        <Card name={card.name} source={card.image} />
+        <Card name={card.name} image={card.image} />
       </div>
     );
   });
 
-  return <>{renderedList}</>;
+  return <div>{renderedList}</div>;
 };
 
 const mapStateToProps = state => {
   return {
+    selectedCards: state.selectedCards,
     name: state.searchedName,
     heroes: state.foundHeroes,
     universe: state.selectedUniverse
   };
 };
 
-export default connect(mapStateToProps)(Test);
+export default connect(mapStateToProps)(CardContainer);

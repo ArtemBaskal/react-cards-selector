@@ -18,3 +18,10 @@ export const searchName = heroes => {
     payload: heroes
   };
 };
+
+export const selectCards = heroes => {
+  return {
+    type: "CARDS_SELECTED",
+    payload: heroes
+  };
+};
