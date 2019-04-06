@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { selectUniverse } from "../actions";
+import { selectUniverse, searchName } from "../actions";
 import dc from "../logos/dc.jpg";
 import marvel from "../logos/marvel.jpg";
 
@@ -10,6 +10,7 @@ class Universe extends React.Component {
       <div
         onClick={() => {
           console.log(this.props.name);
+          this.props.searchName("");
           this.props.selectUniverse(this.props.name);
         }}
       >
@@ -23,11 +24,11 @@ class Universe extends React.Component {
   }
 }
 
-// const mapStateToProps = state => {
-//   return { universe: state.selectedUniverse };
-// };
+const mapStateToProps = state => {
+  return { ё: state.searchedName };
+};
 
 export default connect(
-  null,
-  { selectUniverse }
+  mapStateToProps,
+  { selectUniverse, searchName }
 )(Universe);

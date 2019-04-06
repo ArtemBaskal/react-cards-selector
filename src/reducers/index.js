@@ -7,8 +7,16 @@ const selectedUniverseReducer = (state = "dc", action) => {
   return state;
 };
 
-const searchedHeroReduced = (state = [], action) => {
-  if (action.type === "HERO_SEARCHED") {
+const foundHerosReduced = (state = [], action) => {
+  if (action.type === "HEROES_FOUND") {
+    return action.payload;
+  }
+  return state;
+};
+
+
+const searchedNameReduced = (state = "", action) => {
+  if (action.type === "NAME_SEARCHED") {
     return action.payload;
   }
   return state;
@@ -16,5 +24,6 @@ const searchedHeroReduced = (state = [], action) => {
 
 export default combineReducers({
   selectedUniverse: selectedUniverseReducer,
-  searchedHeroes: searchedHeroReduced
+  foundHeroes: foundHerosReduced,
+  searchedName: searchedNameReduced
 });

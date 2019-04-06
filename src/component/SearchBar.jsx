@@ -1,23 +1,30 @@
 import React from "react";
 import { connect } from "react-redux";
-import { searchHeroes } from "../actions";
+import { findHeroes, searchName } from "../actions";
 import json from "../json/superheroes";
 
 class SearchBar extends React.Component {
+  state = { term: "" };
   onInputChange = event => {
+    this.setState({ term: event.target.value });
+    console.log(event.target.value);
+    console.log(this.state.term);
+    console.log(this.props.searchHeroName);
 
-    // if (!this.props.heroes.length || _universe !== this.props.universe) {
-    //   alert("univ changed");
-    // }
+    //TODO: очистка поля ввода при изменении вселенной
+
     let filterItems = () =>
       json[this.props.universe].filter(
         hero =>
           hero.name.toLowerCase().indexOf(event.target.value.toLowerCase()) > -1
       );
     console.log(filterItems());
-    this.props.searchHeroes(filterItems());
-    // let _universe = this.props.universe;
-    // let _heroes = this.props.heroes;
+    this.props.findHeroes(filterItems());
+    this.props.searchName(event.target.value);
+    // if (this.props.searchHeroName === "") {
+    //   this.setState({ term: "" });
+    // }
+
     console.log(this.props);
   };
 
@@ -29,9 +36,9 @@ class SearchBar extends React.Component {
             <input
               className="prompt"
               type="text"
-              value={this.searchValue}
+              value={this.state.term}
               placeholder="Имя героя"
-              onInput={this.onInputChange}
+              onChange={this.onInputChange}
             />
             <i className="search icon" />
           </div>
@@ -43,10 +50,14 @@ class SearchBar extends React.Component {
 }
 
 const mapStateToProps = state => {
-  return { heroes: state.searchedHeroes, universe: state.selectedUniverse };
+  return {
+    searchHeroName: state.searchedName,
+    heroes: state.foundHeroes,
+    universe: state.selectedUniverse
+  };
 };
 
 export default connect(
   mapStateToProps,
-  { searchHeroes }
+  { findHeroes, searchName }
 )(SearchBar);

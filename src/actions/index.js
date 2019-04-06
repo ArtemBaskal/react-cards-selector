@@ -5,9 +5,16 @@ export const selectUniverse = universe => {
   };
 };
 
-export const searchHeroes = heroes => {
+export const findHeroes = heroes => {
   return {
-    type: "HERO_SEARCHED",
+    type: "HEROES_FOUND",
+    payload: heroes
+  };
+};
+
+export const searchName = heroes => {
+  return {
+    type: "NAME_SEARCHED",
     payload: heroes
   };
 };

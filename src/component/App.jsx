@@ -1,5 +1,4 @@
 import React from "react";
-import json from "../json/superheroes";
 import CardContainer from "./CardContainer";
 import SearchBar from "./SearchBar";
 import Universe from "./Universe";
