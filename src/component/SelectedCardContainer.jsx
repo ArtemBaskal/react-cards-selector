@@ -12,24 +12,36 @@ class SelectedCardContainer extends React.Component {
     console.log(this.props);
     console.log(arr[this.props.name]);
 
+    //TODO: сделать отображение карты один раз, если она выбрана несколько раз
+
     if (!this.props.selectedCards.length) {
       return <div className="absence" />;
     } else {
-      const renderedList = this.props.selectedCards.map((card, i) => {
-        return (
-          <div className="SelectedCardContainer" key={card.name}>
-            <i
-              onClick={() => {
-                console.log(this.props);
-                this.props.removeCard(this.props.selectedCards[i].name);
-              }}
-              className="x icon"
-            />
-            <Card name={card.name} image={card.image} counter={card.counter} />
-            <figcaption className="HeroName">{arr[card.name]}</figcaption>
-          </div>
-        );
-      });
+      console.log(this.props.selectedCards.filter(el => arr[el.name] < 2));
+      const renderedList = this.props.selectedCards
+        .filter(el => arr[el.name] < 2)
+        .map((card, i) => {
+          if (arr[card.name] > 2) {
+            console.log("more than 1");
+          }
+          return (
+            <div className="SelectedCardContainer" key={card.name}>
+              <i
+                onClick={() => {
+                  console.log(this.props);
+                  this.props.removeCard(this.props.selectedCards[i].name);
+                }}
+                className="x icon"
+              />
+              <Card
+                name={card.name}
+                image={card.image}
+                counter={card.counter}
+              />
+              <figcaption className="HeroName">{arr[card.name]}</figcaption>
+            </div>
+          );
+        });
 
       return <div>{renderedList}</div>;
     }
