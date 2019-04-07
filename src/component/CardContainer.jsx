@@ -3,9 +3,8 @@ import Card from "./Card";
 import { connect } from "react-redux";
 import json from "../json/superheroes";
 import "../styles/index.css";
-import _ from "lodash";
 
-const CardContainer = ({ selectedCards, name, heroes, universe }) => {
+const CardContainer = ({ name, heroes, universe }) => {
   let _heroes,
     _universe = universe;
   if (!name.length || _universe !== universe) {
@@ -27,7 +26,6 @@ const CardContainer = ({ selectedCards, name, heroes, universe }) => {
 
 const mapStateToProps = state => {
   return {
-    selectedCards: state.selectedCards,
     name: state.searchedName,
     heroes: state.foundHeroes,
     universe: state.selectedUniverse

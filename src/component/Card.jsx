@@ -4,35 +4,35 @@ import { selectCards, multipleSelectCards } from "../actions";
 import _ from "lodash";
 
 class Card extends React.Component {
+  onCardClick = () => {
+    let arr = _.countBy(this.props.selectedCards, "name");
+
+    if (!arr[this.props.name]) {
+      this.props.selectCards(
+        Object.assign({}, this.props, {
+          counter: 1
+        })
+      );
+    } else {
+      this.props.multipleSelectCards(
+        Object.assign(
+          {},
+          this.props,
+          this.props.selectedCards.filter(
+            card => card.name === this.props.name
+          )[0].counter++
+          //Нативный эквивалент
+          // _.find(
+          //   this.props.selectedCards,
+          //   card => card.name === this.props.name
+          // ).counter++
+        )
+      );
+    }
+  };
   render() {
     return (
-      <div
-        className="Card"
-        onClick={() => {
-          let arr = _.countBy(this.props.selectedCards, "name");
-
-          console.log(this.props);
-          
-          if (!arr[this.props.name]) {
-            this.props.selectCards(
-              Object.assign({}, this.props, {
-                counter: 0
-              })
-            );
-          } else {
-            this.props.multipleSelectCards(
-              Object.assign(
-                {},
-                this.props,
-                _.find(
-                  this.props.selectedCards,
-                  card => card.name === this.props.name
-                ).counter++
-              )
-            );
-          }
-        }}
-      >
+      <div className="Card" onClick={this.onCardClick}>
         <img src={this.props.image} alt={this.props.name} />
         <figcaption className="HeroName">{this.props.name}</figcaption>
       </div>

@@ -1,5 +1,4 @@
-import { combineReducers, bindActionCreators } from "redux";
-import _ from "lodash";
+import { combineReducers } from "redux";
 
 const selectedUniverseReducer = (state = "dc", action) => {
   if (action.type === "UNIVERSE_SELECTED") {
@@ -31,7 +30,6 @@ const selectedCardsReducer = (state = [], action) => {
 
     case "CARD_MULTIPLE_SELECTED": {
       console.log(state);
-      console.log(action.payload.selectedCards);
       return [...state];
     }
 
@@ -43,13 +41,6 @@ const selectedCardsReducer = (state = [], action) => {
       return state;
   }
 };
-
-// const clickCardReducer = (state = [], action) => {
-//   if (action.type === "CARD_CLICKED") {
-//     return action.payload;
-//   }
-//   return state;
-// };
 
 export default combineReducers({
   selectedUniverse: selectedUniverseReducer,

@@ -5,28 +5,14 @@ import json from "../json/superheroes";
 import "../styles/index.css";
 
 class SearchBar extends React.Component {
-  state = { term: "" };
   onInputChange = event => {
-    this.setState({ term: event.target.value });
-    console.log(event.target.value);
-    console.log(this.state.term);
-    console.log(this.props.searchHeroName);
-
-    //TODO: очистка поля ввода при изменении вселенной
-
     let filterItems = () =>
       json[this.props.universe].filter(
         hero =>
           hero.name.toLowerCase().indexOf(event.target.value.toLowerCase()) > -1
       );
-    console.log(filterItems());
     this.props.findHeroes(filterItems());
     this.props.searchName(event.target.value);
-    // if (this.props.searchHeroName === "") {
-    //   this.setState({ term: "" });
-    // }
-
-    console.log(this.props);
   };
 
   render() {
@@ -37,7 +23,7 @@ class SearchBar extends React.Component {
             <input
               className="prompt"
               type="text"
-              value={this.state.term}
+              value={this.props.searchHeroName}
               placeholder="Имя героя"
               onChange={this.onInputChange}
             />

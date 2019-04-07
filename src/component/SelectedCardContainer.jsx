@@ -3,7 +3,6 @@ import Card from "./Card";
 import { connect } from "react-redux";
 import { removeCard } from "../actions";
 import "../styles/index.css";
-import _ from "lodash";
 
 class SelectedCardContainer extends React.Component {
   render() {
@@ -20,7 +19,7 @@ class SelectedCardContainer extends React.Component {
               }}
               className="x icon"
             />
-            <Card name={card.name} image={card.image} />
+            <Card image={card.image} />
             <figcaption className="HeroName">{card.counter}</figcaption>
           </div>
         );
