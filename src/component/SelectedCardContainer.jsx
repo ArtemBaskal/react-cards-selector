@@ -7,7 +7,7 @@ import "../styles/index.css";
 class SelectedCardContainer extends React.Component {
   render() {
     if (!this.props.selectedCards.length) {
-      return <div className="absence" />;
+      return <div className="absence">Выберите супергероя</div>;
     } else {
       const renderedList = this.props.selectedCards.map((card, i) => {
         return (
@@ -20,7 +20,9 @@ class SelectedCardContainer extends React.Component {
               className="x icon"
             />
             <Card image={card.image} />
-            <figcaption className="HeroName">{card.counter}</figcaption>
+            <figcaption className="HeroName">
+              {card.counter > 1 ? card.counter : ""}
+            </figcaption>
           </div>
         );
       });

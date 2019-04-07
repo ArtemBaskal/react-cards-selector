@@ -4,7 +4,7 @@
 
 .SelectedCardContainer {
   display: table-cell;
-  overflow-x: scroll;
+  /* overflow-x: scroll; */
 }
 
 .Card img {

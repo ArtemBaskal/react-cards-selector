@@ -13,6 +13,11 @@ const CardContainer = ({ name, heroes, universe }) => {
   } else {
     _heroes = heroes;
   }
+
+  if (!_heroes.length) {
+    return <div>Ничего не найдено</div>;
+  }
+
   const renderedList = _heroes.map(card => {
     return (
       <div className="CardContainer" key={card.name}>

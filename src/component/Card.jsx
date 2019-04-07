@@ -21,11 +21,6 @@ class Card extends React.Component {
           this.props.selectedCards.filter(
             card => card.name === this.props.name
           )[0].counter++
-          //Нативный эквивалент
-          // _.find(
-          //   this.props.selectedCards,
-          //   card => card.name === this.props.name
-          // ).counter++
         )
       );
     }
