@@ -1,27 +1,40 @@
 import React from "react";
 import { connect } from "react-redux";
-import { selectCards } from "../actions";
-// import _ from "lodash";
+import { selectCards, multipleSelectCards } from "../actions";
+import _ from "lodash";
 
 class Card extends React.Component {
   render() {
-    // let arr = _.countBy(this.props.selectedCards, "name");
-    // console.log(arr);
-    // console.log(this.props);
-    // console.log(arr[this.props.name]);
     return (
       <div
         className="Card"
         onClick={() => {
-          //     console.log(this.props.selectedCards);
-          // console.log(Array.from([this.props.image, this.props.name]));
-          this.props.selectCards(this.props);
+          let arr = _.countBy(this.props.selectedCards, "name");
+
           console.log(this.props);
+          
+          if (!arr[this.props.name]) {
+            this.props.selectCards(
+              Object.assign({}, this.props, {
+                counter: 0
+              })
+            );
+          } else {
+            this.props.multipleSelectCards(
+              Object.assign(
+                {},
+                this.props,
+                _.find(
+                  this.props.selectedCards,
+                  card => card.name === this.props.name
+                ).counter++
+              )
+            );
+          }
         }}
       >
         <img src={this.props.image} alt={this.props.name} />
         <figcaption className="HeroName">{this.props.name}</figcaption>
-        {/* <figcaption className="HeroName">{arr[this.props.name]}</figcaption> */}
       </div>
     );
   }
@@ -35,5 +48,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { selectCards }
+  { selectCards, multipleSelectCards }
 )(Card);

@@ -14,10 +14,6 @@ const CardContainer = ({ selectedCards, name, heroes, universe }) => {
   } else {
     _heroes = heroes;
   }
-
-  // let arr = _.countBy(selectedCards, "name");
-  // console.log(arr[name]);
-
   const renderedList = _heroes.map(card => {
     return (
       <div className="CardContainer" key={card.name}>

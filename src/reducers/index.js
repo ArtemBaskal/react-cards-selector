@@ -1,4 +1,4 @@
-import { combineReducers } from "redux";
+import { combineReducers, bindActionCreators } from "redux";
 import _ from "lodash";
 
 const selectedUniverseReducer = (state = "dc", action) => {
@@ -25,13 +25,16 @@ const searchedNameReducer = (state = "", action) => {
 const selectedCardsReducer = (state = [], action) => {
   switch (action.type) {
     case "CARDS_SELECTED": {
-      let arr = _.countBy(state, "name");
-      console.log(state);
-      console.log(arr);
-      console.log(action.payload);
-      console.log(arr[action.payload.name]);
+      console.log([...state, action.payload]);
       return [...state, action.payload];
     }
+
+    case "CARD_MULTIPLE_SELECTED": {
+      console.log(state);
+      console.log(action.payload.selectedCards);
+      return [...state];
+    }
+
     case "CARDS_REMOVED": {
       console.log(state);
       return state.filter(el => el.name !== action.payload);
@@ -40,6 +43,13 @@ const selectedCardsReducer = (state = [], action) => {
       return state;
   }
 };
+
+// const clickCardReducer = (state = [], action) => {
+//   if (action.type === "CARD_CLICKED") {
+//     return action.payload;
+//   }
+//   return state;
+// };
 
 export default combineReducers({
   selectedUniverse: selectedUniverseReducer,
