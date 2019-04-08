@@ -17,11 +17,11 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div className="ui fluid big category search">
+      <div className="SearchBar">
         <form onSubmit={e => e.preventDefault()}>
-          <div className="ui icon input">
+          <div className="">
             <input
-              className="prompt"
+              className=""
               type="text"
               value={this.props.searchHeroName}
               placeholder="Имя героя"

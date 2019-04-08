@@ -9,10 +9,12 @@ class App extends React.Component {
     return (
       <div>
         <SelectedCardContainer />
-        <SearchBar />
-        <CardContainer />
-        <Universe name="dc" />
-        <Universe name="marvel" />
+        <div className="mainBody">
+          <SearchBar />
+          <CardContainer />
+          <Universe name="dc" />
+          <Universe name="marvel" />
+        </div>
       </div>
     );
   }

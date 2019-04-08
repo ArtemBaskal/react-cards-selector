@@ -1,5 +1,19 @@
+html {
+  padding: 0px;
+}
+
 .CardContainer {
   display: inline-block;
+}
+
+.CardsContainer {
+  background: linear-gradient(
+    180deg,
+    #31333b 13.26%,
+    #363945 74.59%,
+    #2b2d35 100%
+  );
+  border: 0px;
 }
 
 .SelectedCardContainer {
@@ -7,20 +21,98 @@
   /* overflow-x: scroll; */
 }
 
+.SelectedCardsContainer {
+  background: #2b2d35;
+  border: -10px;
+}
+
+.absence {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4b4e5c;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: normal;
+  text-align: center;
+  color: #4b4e5c;
+}
+
+.nothingFound {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: normal;
+  text-align: center;
+}
+
+.mainBody {
+  background: linear-gradient(
+    180deg,
+    #31333b 13.26%,
+    #363945 74.59%,
+    #2b2d35 100%
+  );
+}
+
+.SearchBar {
+  padding: 16px 20px 28px 16px;
+}
+
+.SearchBar input {
+  padding: 19px 40px 14px 19px;
+  max-height: 56px;
+  border: 0px;
+  width: 84%; /* поправить */
+  background: #4b4e5c;
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+.SearchBar ::placeholder {
+  color: #ffffff;
+}
+
+.Card {
+  /* height: 200px; */
+  padding-left: 0px;
+  padding-right: 16px;
+}
 .Card img {
   display: flexbox;
-  height: 200px;
-  border-radius: 20px;
-  margin: 8px;
+  /* height: 100px; */
+  height: 100px;
+  border-radius: 8px;
+  /* margin: 8px; */
 }
 
 .Card figcaption {
+  left: 0px;
+  right: 0px;
+  top: 105px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: normal;
+  text-align: center;
+  color: #ffffff;
   display: flexbox;
 }
 
 .HeroName {
   display: flex;
   justify-content: center;
+  width: 65px;
+  height: 15px;
   margin-bottom: 20px;
 }
 

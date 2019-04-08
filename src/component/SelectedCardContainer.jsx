@@ -7,7 +7,11 @@ import "../styles/index.css";
 class SelectedCardContainer extends React.Component {
   render() {
     if (!this.props.selectedCards.length) {
-      return <div className="absence">Выберите супергероя</div>;
+      return (
+        <div className="absence SelectedCardsContainer">
+          Выберите супергероя
+        </div>
+      );
     } else {
       const renderedList = this.props.selectedCards.map((card, i) => {
         return (
@@ -18,16 +22,18 @@ class SelectedCardContainer extends React.Component {
                 this.props.removeCard(this.props.selectedCards[i].name);
               }}
               className="x icon"
-            />
+            >
+              X
+            </i>
             <Card image={card.image} />
-            <figcaption className="HeroName">
+            <span className="HeroName">
               {card.counter > 1 ? card.counter : ""}
-            </figcaption>
+            </span>
           </div>
         );
       });
 
-      return <div>{renderedList}</div>;
+      return <div className="SelectedCardsContainer">{renderedList}</div>;
     }
   }
 }

@@ -15,7 +15,7 @@ const CardContainer = ({ name, heroes, universe }) => {
   }
 
   if (!_heroes.length) {
-    return <div>Ничего не найдено</div>;
+    return <div className="nothingFound">Ничего не найдено</div>;
   }
 
   const renderedList = _heroes.map(card => {
@@ -26,7 +26,7 @@ const CardContainer = ({ name, heroes, universe }) => {
     );
   });
 
-  return <div>{renderedList}</div>;
+  return <div className="CardsContainer">{renderedList}</div>;
 };
 
 const mapStateToProps = state => {
