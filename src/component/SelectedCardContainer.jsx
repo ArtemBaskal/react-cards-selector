@@ -21,7 +21,7 @@ class SelectedCardContainer extends React.Component {
                 console.log(this.props);
                 this.props.removeCard(this.props.selectedCards[i].name);
               }}
-              className="x icon"
+              className="Xicon"
             >
               X
             </i>

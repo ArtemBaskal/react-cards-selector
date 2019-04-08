@@ -1,5 +1,6 @@
 html {
-  padding: 0px;
+  margin: -8px;
+  /* overflow-y: hidden */
 }
 
 .CardContainer {
@@ -23,7 +24,16 @@ html {
 
 .SelectedCardsContainer {
   background: #2b2d35;
-  border: -10px;
+  padding-top: 40px;
+  padding-left: 20px;
+  /* display: table-cell */
+  /* border: -10px; */
+  /* display: grid; */
+  /* grid-auto-flow: column; */
+  /* grid-template-columns: repeat(auto-fill, minmax(75px, 1fr)); */
+  /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
+  /* grid-gap: 0 0px; */
+  /* grid-auto-rows: 10px; */
 }
 
 .absence {
@@ -81,9 +91,15 @@ html {
   color: #ffffff;
 }
 
+.Xicon {
+  /* background: red; */
+  /* position: relative; */
+  float: left;
+  margin-top: 20px;
+}
 .Card {
   /* height: 200px; */
-  padding-left: 0px;
+  /* padding-left: 0px; */
   padding-right: 16px;
 }
 .Card img {
