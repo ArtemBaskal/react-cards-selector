@@ -25,8 +25,8 @@ class SelectedCardContainer extends React.Component {
             >
               X
             </i>
-            <Card image={card.image} />
-            <span className="HeroName">
+            <Card name={card.name} image={card.image} className="selectedCard"/>
+            <span className="counter">
               {card.counter > 1 ? card.counter : ""}
             </span>
           </div>

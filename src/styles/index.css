@@ -17,9 +17,17 @@ html {
   border: 0px;
 }
 
+/* .selectedCard .HeroName {
+  display: none
+} */
+
 .SelectedCardContainer {
   display: table-cell;
   /* overflow-x: scroll; */
+}
+
+.SelectedCardContainer .HeroName {
+  display: none;
 }
 
 .SelectedCardsContainer {

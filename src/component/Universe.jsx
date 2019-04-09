@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { selectUniverse, searchName } from "../actions";
+import { NavLink } from "react-router-dom";
 import dc from "../logos/dc.jpg";
 import marvel from "../logos/marvel.jpg";
 import "../styles/index.css";
@@ -16,10 +17,12 @@ class Universe extends React.Component {
           this.props.selectUniverse(this.props.name);
         }}
       >
-        <img
-          src={this.props.name === "dc" ? dc : marvel}
-          alt={this.props.name === "dc" ? dc : marvel}
-        />
+        <NavLink to={`/${this.props.name}`}>
+          <img
+            src={this.props.name === "dc" ? dc : marvel}
+            alt={this.props.name === "dc" ? dc : marvel}
+          />
+        </NavLink>
       </div>
     );
   }
