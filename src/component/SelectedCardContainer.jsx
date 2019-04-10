@@ -8,33 +8,34 @@ class SelectedCardContainer extends React.Component {
   render() {
     if (!this.props.selectedCards.length) {
       return (
-        <div className="absence SelectedCardsContainer">
-          Выберите супергероя
-        </div>
+        <div className="absence SelectedCardsContainer">Выберите героя</div>
       );
     } else {
-      const renderedList = this.props.selectedCards.map((card, i) => {
-        return (
-          <div className="SelectedCardContainer" key={card.name}>
-            <i
-              onClick={() => {
-                console.log(this.props);
-                this.props.removeCard(this.props.selectedCards[i].name);
-              }}
-              className="Xicon"
-            >
-              X
-            </i>
-            <Card name={card.name} image={card.image} className="selectedCard"/>
-            <span className="counter">
-              {card.counter > 1 ? card.counter : ""}
-            </span>
-          </div>
-        );
-      });
-
-      return <div className="SelectedCardsContainer">{renderedList}</div>;
     }
+    const renderedList = this.props.selectedCards.map((card, i) => {
+      const counter = () => {
+        if (card.counter > 1) {
+          return <span className="counter">{card.counter}</span>;
+        }
+      };
+      return (
+        <div className="SelectedCardContainer" key={card.name}>
+          <button
+            onClick={() => {
+              console.log(this.props);
+              this.props.removeCard(this.props.selectedCards[i].name);
+            }}
+            className="Xicon"
+          >
+            &#10060;
+          </button>
+          <Card name={card.name} image={card.image} className="selectedCard" />
+          <>{counter()}</>
+        </div>
+      );
+    });
+
+    return <div className="SelectedCardsContainer">{renderedList}</div>;
   }
 }
 

@@ -27,7 +27,7 @@ class SearchBar extends React.Component {
               placeholder="Имя героя"
               onChange={this.onInputChange}
             />
-            <i className="search icon" />
+            <i className="searchIcon">&#128269;</i>
           </div>
           <div className="results" />
         </form>

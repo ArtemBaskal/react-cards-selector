@@ -5,9 +5,12 @@ import _ from "lodash";
 
 class Card extends React.Component {
   onCardClick = () => {
-    let arr = _.countBy(this.props.selectedCards, "name");
+    let mapSelectedHeroesToCounters = _.countBy(
+      this.props.selectedCards,
+      "name"
+    );
 
-    if (!arr[this.props.name]) {
+    if (!mapSelectedHeroesToCounters[this.props.name]) {
       this.props.selectCards(
         Object.assign({}, this.props, {
           counter: 1
