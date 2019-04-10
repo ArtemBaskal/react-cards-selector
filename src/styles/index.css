@@ -1,6 +1,6 @@
 html {
   margin: -8px;
-  /* overflow-y: hidden */
+  overflow-x: hidden;
 }
 
 .CardContainer {
@@ -120,11 +120,9 @@ html {
 
 .searchIcon {
   /* нужно сделать белой */
-  position: relative;
-  right: 4%;
+  display: inline;
   color: #ffffff;
   font-size: 18px;
-  /* background: red; */
 }
 
 .SelectedCardContainer .HeroName {
@@ -134,9 +132,22 @@ html {
 .SelectedCardsContainer {
   background: #2b2d35;
   padding: 40px 20px 28px;
-  overflow-x: scroll;
-  /* padding-left: 20px;
-  padding-bottom: 28px; */
+  overflow-x: auto;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #4b4e5c;
 }
 
 .absence {
@@ -168,6 +179,7 @@ html {
 }
 
 .mainBody {
+  position: relative;
   background: linear-gradient(
     180deg,
     #31333b 13.26%,
@@ -184,7 +196,7 @@ html {
   padding: 19px 40px 14px 19px;
   max-height: 56px;
   border: 0px;
-  width: 83%; /*поправить */
+  width: 83%; /*поправить*/
   background: #4b4e5c;
   border-radius: 8px;
   color: #ffffff;
@@ -235,6 +247,15 @@ html {
 }
 
 .universe img {
-  height: 150px;
-  display: table-cell;
+  /* height: 15px; */
+  position: relative;
+  height: 120px;
+  width: 75px;
+  padding: 14px 28px 21px 7px;
+}
+
+.universesContainer{
+  
+  display: flex;
+  background: #31333d;
 }

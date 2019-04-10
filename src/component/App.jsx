@@ -13,8 +13,10 @@ class App extends React.Component {
         <div className="mainBody">
           <SearchBar />
           <CardContainer />
-          <Universe name="dc" />
-          <Universe name="marvel" />
+          <div className="universesContainer">
+            <Universe name="dc" />
+            <Universe name="marvel" />
+          </div>
         </div>
       </div>
     );

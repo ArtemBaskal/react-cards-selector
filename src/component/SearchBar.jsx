@@ -19,7 +19,7 @@ class SearchBar extends React.Component {
     return (
       <div className="SearchBar">
         <form onSubmit={e => e.preventDefault()}>
-          <div className="">
+          <div className="SearchBarInput">
             <input
               className=""
               type="text"
