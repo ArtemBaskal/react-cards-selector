@@ -49,12 +49,12 @@ html {
 } */
 
 .CardsContainer {
-  background: linear-gradient(
+  /* background: linear-gradient(
     180deg,
     #31333b 13.26%,
     #363945 74.59%,
     #2b2d35 100%
-  );
+  ); */
   padding-left: 20px;
 }
 
@@ -130,7 +130,8 @@ html {
 }
 
 .SelectedCardsContainer {
-  background: #2b2d35;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    linear-gradient(180deg, #555761 -51.19%, #2b2d35 100%);
   padding: 40px 20px 28px;
   overflow-x: auto;
 }
@@ -154,18 +155,19 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #4b4e5c;
+  /* color: #4b4e5c; */
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: normal;
   text-align: center;
-  color: #4b4e5c;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    linear-gradient(180deg, #555761 -51.19%, #2b2d35 100%);
 }
 
 .nothingFound {
-  height: 400px;
+  height: 278px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -176,6 +178,12 @@ html {
   font-size: 18px;
   line-height: normal;
   text-align: center;
+}
+
+@media (min-width: 700px) {
+  .nothingFound {
+    height: 139px;
+  }
 }
 
 .mainBody {
@@ -190,13 +198,28 @@ html {
 
 .SearchBar {
   padding: 16px 20px 28px 16px;
+  height: 56px;
+}
+
+@media (max-width: 375px) {
+  .SearchBar input {
+    box-sizing: border-box;
+    width: 288px;
+  }
+}
+@media (min-width: 376px) {
+  .SearchBar input {
+    box-sizing: border-box;
+    width: 336px;
+  }
 }
 
 .SearchBar input {
   padding: 19px 40px 14px 19px;
-  max-height: 56px;
+  box-sizing: border-box;
+  height: 56px;
   border: 0px;
-  width: 83%; /*поправить*/
+  /* width: 288px; */
   background: #4b4e5c;
   border-radius: 8px;
   color: #ffffff;
@@ -243,19 +266,65 @@ html {
 
 .absence {
   position: relative;
-  height: 259px;
+  height: 168px;
+  color: #4b4e5c;
 }
 
-.universe img {
-  /* height: 15px; */
-  position: relative;
-  height: 120px;
-  width: 75px;
-  padding: 14px 28px 21px 7px;
+@media (max-width: 374px) {
+  .dc img {
+    display: inline-block;
+    height: 75px;
+    width: 120px;
+    padding: 14px 21px 7px 28px;
+  }
+
+  .marvel img {
+    float: right;
+    height: 50px;
+    width: 111px;
+    padding: 24px 40px 22px 0px;
+  }
 }
 
-.universesContainer{
-  
+@media (min-width: 375px) {
+  .dc img {
+    height: 75px;
+    width: 120px;
+    padding: 14px 45px 11px 44px;
+  }
+
+  .marvel img {
+    height: 50px;
+    width: 111px;
+    padding: 24px 40px 22px 0px;
+  }
+}
+
+.universesContainer {
   display: flex;
-  background: #31333d;
+}
+.universesContainer img {
+  opacity: 0.2;
+}
+
+.dc img:active {
+  opacity: 1;
+}
+
+.marvel img:active {
+  opacity: 1;
+}
+
+.dc img:hover {
+  opacity: 1;
+}
+
+.marvel img:hover {
+  opacity: 1;
+}
+
+@media (min-width: 766px) {
+  .universesContainer {
+    transform: translate(370px, -245px);
+  }
 }

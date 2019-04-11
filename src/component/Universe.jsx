@@ -10,11 +10,11 @@ class Universe extends React.Component {
   render() {
     return (
       <div
-        className="universe"
+        className={this.props.name}
         onClick={() => {
-          console.log(this.props.name);
           this.props.searchName("");
           this.props.selectUniverse(this.props.name);
+          this.setState({ opacity: 0.2 });
         }}
       >
         <NavLink to={`/${this.props.name}`}>
@@ -28,7 +28,13 @@ class Universe extends React.Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    universe: state.selectedUniverse
+  };
+};
+
 export default connect(
-  null,
+  mapStateToProps,
   { selectUniverse, searchName }
 )(Universe);

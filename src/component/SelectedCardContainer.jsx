@@ -8,7 +8,7 @@ class SelectedCardContainer extends React.Component {
   render() {
     if (!this.props.selectedCards.length) {
       return (
-        <div className="absence SelectedCardsContainer">Выберите героя</div>
+        <div className="absence">Выберите героя</div>
       );
     } else {
     }
