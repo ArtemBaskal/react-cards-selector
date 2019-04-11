@@ -32,7 +32,7 @@ class Card extends React.Component {
     return (
       <div className="Card" onClick={this.onCardClick}>
         <img src={this.props.image} alt={this.props.name} />
-        <figcaption className="HeroName">{this.props.name}</figcaption>
+        <figcaption className="HeroName fontStyle">{this.props.name}</figcaption>
       </div>
     );
   }

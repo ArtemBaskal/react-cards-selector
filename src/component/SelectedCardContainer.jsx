@@ -7,9 +7,7 @@ import "../styles/index.css";
 class SelectedCardContainer extends React.Component {
   render() {
     if (!this.props.selectedCards.length) {
-      return (
-        <div className="absence">Выберите героя</div>
-      );
+      return <div className="absence fontStyle">Выберите героя</div>;
     } else {
     }
     const renderedList = this.props.selectedCards.map((card, i) => {
@@ -20,16 +18,21 @@ class SelectedCardContainer extends React.Component {
       };
       return (
         <div className="SelectedCardContainer" key={card.name}>
-          <button
+          <span
             onClick={() => {
-              console.log(this.props);
               this.props.removeCard(this.props.selectedCards[i].name);
             }}
             className="Xicon"
+            role="img"
+            aria-label={"X"}
           >
             &#10060;
-          </button>
-          <Card name={card.name} image={card.image} className="selectedCard" />
+          </span>
+          <Card
+            name={card.name}
+            image={card.image}
+            className="selectedCard fontStyle"
+          />
           <>{counter()}</>
         </div>
       );

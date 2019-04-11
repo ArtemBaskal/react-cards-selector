@@ -17,21 +17,15 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-        <div className="SearchBar">
-          {/* <form onSubmit={e => e.preventDefault()}> */}
-            {/* <div className="SearchBarInput"> */}
-              <input
-                type="text"
-                value={this.props.searchHeroName}
-                placeholder="Имя героя"
-                onChange={this.onInputChange}
-              />
-              <i className="searchIcon">&#128269;</i>
-              {/* <i class="searchBarIcon" /> */}
-            {/* </div> */}
-            {/* <div className="results" /> */}
-          {/* </form> */}
-        </div>
+      <div className="SearchBar">
+        <input
+          type="text"
+          value={this.props.searchHeroName}
+          placeholder="Имя героя"
+          onChange={this.onInputChange}
+        />
+        <i className="fas fa-search" />
+      </div>
     );
   }
 }

@@ -14,7 +14,6 @@ class Universe extends React.Component {
         onClick={() => {
           this.props.searchName("");
           this.props.selectUniverse(this.props.name);
-          this.setState({ opacity: 0.2 });
         }}
       >
         <NavLink to={`/${this.props.name}`}>

@@ -1,25 +1,23 @@
 html {
   margin: -8px;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .CardContainer {
   display: inline-block;
-  /* block-size: 100px; */
 }
 
 .Card img {
   display: flexbox;
   height: 100px;
   border-radius: 8px;
-  /* margin: 0px; */
 }
 
 .SelectedCardContainer .Card {
   block-size: 100px;
 }
 
-@media (max-width: 374px) {
+@media (max-width: 375px) {
   .CardContainer {
     padding-right: 8px;
   }
@@ -31,9 +29,28 @@ html {
   .SelectedCardContainer .Card img {
     width: 72px;
   }
+
+  .SearchBar input {
+    box-sizing: border-box;
+    width: 288px;
+  }
+
+  .dc img {
+    display: inline-block;
+    height: 75px;
+    width: 120px;
+    padding: 14px 21px 7px 28px;
+  }
+
+  .marvel img {
+    float: right;
+    height: 50px;
+    width: 111px;
+    padding: 24px 40px 22px 0px;
+  }
 }
 
-@media (min-width: 375px) {
+@media (min-width: 376px) {
   .CardContainer {
     padding-right: 16px;
   }
@@ -41,33 +58,39 @@ html {
   .Card img {
     width: 72px;
   }
+  .SearchBar input {
+    box-sizing: border-box;
+    width: 336px;
+  }
+  .dc img {
+    height: 75px;
+    width: 120px;
+    padding: 14px 45px 11px 44px;
+  }
+
+  .marvel img {
+    height: 50px;
+    width: 111px;
+    padding: 24px 40px 22px 0px;
+  }
 }
 
-/* .CardContainer {
-  display: inline-block;
-  padding-right: 16px;
-} */
+.font-style {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  text-align: center;
+}
 
 .CardsContainer {
-  /* background: linear-gradient(
-    180deg,
-    #31333b 13.26%,
-    #363945 74.59%,
-    #2b2d35 100%
-  ); */
   padding-left: 20px;
 }
-
-/* .selectedCard .HeroName {
-  display: none
-} */
 
 .SelectedCardContainer {
   display: table-cell;
   position: relative;
   padding-right: 16px;
-  /* padding-bottom: 28px; */
-  /* overflow-x: scroll; */
 }
 
 .SelectedCardContainer .counter {
@@ -81,18 +104,8 @@ html {
   left: 4px;
   bottom: 4px;
   background: #00c35a;
-  /* text-align: center; */
   line-height: 24px;
   height: 24px;
-  /* text-justify: inter-character; */
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: normal;
-
-  /* justify-content: center ;
-  align-items: center; */
   font-size: 12px;
   color: #ffffff;
 }
@@ -116,10 +129,10 @@ html {
   border: 2px solid #ffffff;
   box-sizing: border-box;
   color: white;
+  cursor: default;
 }
 
 .searchIcon {
-  /* нужно сделать белой */
   display: inline;
   color: #ffffff;
   font-size: 18px;
@@ -155,13 +168,10 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* color: #4b4e5c; */
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
+  position: relative;
+  height: 168px;
+  color: #4b4e5c;
   font-size: 18px;
-  line-height: normal;
-  text-align: center;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     linear-gradient(180deg, #555761 -51.19%, #2b2d35 100%);
 }
@@ -172,22 +182,13 @@ html {
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
   font-size: 18px;
   line-height: normal;
-  text-align: center;
-}
-
-@media (min-width: 700px) {
-  .nothingFound {
-    height: 139px;
-  }
 }
 
 .mainBody {
   position: relative;
+  height: calc(100vh - 168px);
   background: linear-gradient(
     180deg,
     #31333b 13.26%,
@@ -197,21 +198,9 @@ html {
 }
 
 .SearchBar {
-  padding: 16px 20px 28px 16px;
+  position: relative;
+  padding: 16px 0px 28px 16px;
   height: 56px;
-}
-
-@media (max-width: 375px) {
-  .SearchBar input {
-    box-sizing: border-box;
-    width: 288px;
-  }
-}
-@media (min-width: 376px) {
-  .SearchBar input {
-    box-sizing: border-box;
-    width: 336px;
-  }
 }
 
 .SearchBar input {
@@ -219,39 +208,26 @@ html {
   box-sizing: border-box;
   height: 56px;
   border: 0px;
-  /* width: 288px; */
   background: #4b4e5c;
   border-radius: 8px;
   color: #ffffff;
+}
+
+.SearchBar i {
+  position: absolute;
+  transform: translate(-36px, 20px);
+  color: white;
 }
 
 .SearchBar ::placeholder {
   color: #ffffff;
 }
 
-.Card {
-  /* height: 200px; */
-  /* padding-left: 0px; */
-  /* padding-right: 16px; */
-}
-
-/* .Card img {
-  display: flexbox;
-  height: 100px;
-  width: 66px;
-  border-radius: 8px;
-} */
-
 .Card figcaption {
   left: 0px;
   right: 0px;
   top: 105px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
   font-size: 12px;
-  line-height: normal;
-  text-align: center;
   color: #ffffff;
   display: flexbox;
 }
@@ -264,55 +240,11 @@ html {
   margin-bottom: 20px;
 }
 
-.absence {
-  position: relative;
-  height: 168px;
-  color: #4b4e5c;
-}
-
-@media (max-width: 374px) {
-  .dc img {
-    display: inline-block;
-    height: 75px;
-    width: 120px;
-    padding: 14px 21px 7px 28px;
-  }
-
-  .marvel img {
-    float: right;
-    height: 50px;
-    width: 111px;
-    padding: 24px 40px 22px 0px;
-  }
-}
-
-@media (min-width: 375px) {
-  .dc img {
-    height: 75px;
-    width: 120px;
-    padding: 14px 45px 11px 44px;
-  }
-
-  .marvel img {
-    height: 50px;
-    width: 111px;
-    padding: 24px 40px 22px 0px;
-  }
-}
-
 .universesContainer {
   display: flex;
 }
 .universesContainer img {
   opacity: 0.2;
-}
-
-.dc img:active {
-  opacity: 1;
-}
-
-.marvel img:active {
-  opacity: 1;
 }
 
 .dc img:hover {
@@ -326,5 +258,8 @@ html {
 @media (min-width: 766px) {
   .universesContainer {
     transform: translate(370px, -245px);
+  }
+  .nothingFound {
+    height: 139px;
   }
 }
