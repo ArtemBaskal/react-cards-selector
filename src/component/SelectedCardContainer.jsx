@@ -31,7 +31,7 @@ class SelectedCardContainer extends React.Component {
           <Card
             name={card.name}
             image={card.image}
-            className="selectedCard fontStyle"
+            className="selectedCard font-style "
           />
           <>{counter()}</>
         </div>
