@@ -1,15 +1,15 @@
 {
-  "main.css": "/react-cards-selector/static/css/main.2a7854cc.chunk.css",
-  "main.js": "/react-cards-selector/static/js/main.1476651f.chunk.js",
-  "main.js.map": "/react-cards-selector/static/js/main.1476651f.chunk.js.map",
-  "runtime~main.js": "/react-cards-selector/static/js/runtime~main.1a941984.js",
-  "runtime~main.js.map": "/react-cards-selector/static/js/runtime~main.1a941984.js.map",
-  "static/js/2.e59c6505.chunk.js": "/react-cards-selector/static/js/2.e59c6505.chunk.js",
-  "static/js/2.e59c6505.chunk.js.map": "/react-cards-selector/static/js/2.e59c6505.chunk.js.map",
-  "index.html": "/react-cards-selector/index.html",
-  "precache-manifest.4cac60323cba114aedf94d5ea62ad5c3.js": "/react-cards-selector/precache-manifest.4cac60323cba114aedf94d5ea62ad5c3.js",
-  "service-worker.js": "/react-cards-selector/service-worker.js",
-  "static/css/main.2a7854cc.chunk.css.map": "/react-cards-selector/static/css/main.2a7854cc.chunk.css.map",
-  "static/media/dc.svg": "/react-cards-selector/static/media/dc.e627f7ed.svg",
-  "static/media/marvel.svg": "/react-cards-selector/static/media/marvel.06125b3c.svg"
+  "main.css": "/static/css/main.2a7854cc.chunk.css",
+  "main.js": "/static/js/main.1476651f.chunk.js",
+  "main.js.map": "/static/js/main.1476651f.chunk.js.map",
+  "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+  "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+  "static/js/2.e59c6505.chunk.js": "/static/js/2.e59c6505.chunk.js",
+  "static/js/2.e59c6505.chunk.js.map": "/static/js/2.e59c6505.chunk.js.map",
+  "index.html": "/index.html",
+  "precache-manifest.3ebc05a35299d2ee7239e1ccfaa3c6b9.js": "/precache-manifest.3ebc05a35299d2ee7239e1ccfaa3c6b9.js",
+  "service-worker.js": "/service-worker.js",
+  "static/css/main.2a7854cc.chunk.css.map": "/static/css/main.2a7854cc.chunk.css.map",
+  "static/media/dc.svg": "/static/media/dc.e627f7ed.svg",
+  "static/media/marvel.svg": "/static/media/marvel.06125b3c.svg"
 }
